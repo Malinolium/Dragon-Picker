@@ -5,23 +5,86 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638005743264661773
-    m_Hash: 2891438559
+      ticks: 638005946557292983
+    m_Hash: 2847270821
   m_LockFileStatus:
     m_FilePath: D:/UnityHub/UnityProjects/Dragon Picker/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638005743850077991
-    m_Hash: 3956890126
+      ticks: 638005946557345104
+    m_Hash: 3678340151
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
-  m_LocalFileStatus: []
+  m_LocalFileStatus:
+  - m_FilePath: C:\Users\farma\Downloads\yandex-games-plugin-unity-2e0b05f3901c278e5681799595f3de9f27ebf6a3\yandex-games-plugin-unity-2e0b05f3901c278e5681799595f3de9f27ebf6a3/package.json
+    m_PathExists: 1
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 638005946222329607
+    m_Hash: 4005432206
+  - m_FilePath: C:\Users\farma\Downloads\yandex-games-plugin-unity-2e0b05f3901c278e5681799595f3de9f27ebf6a3\yandex-games-plugin-unity-2e0b05f3901c278e5681799595f3de9f27ebf6a3
+    m_PathExists: 1
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 0
+    m_Hash: 0
 m_ProjectPath: D:/UnityHub/UnityProjects/Dragon Picker/Packages
 m_EditorVersion: 2021.3.10f1 (1c7d0df0160b)
 m_ResolvedPackages:
+- packageId: com.k0fe.yandexgamessdk@file:C:\Users\farma\Downloads\yandex-games-plugin-unity-2e0b05f3901c278e5681799595f3de9f27ebf6a3\yandex-games-plugin-unity-2e0b05f3901c278e5681799595f3de9f27ebf6a3
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.1
+  source: 4
+  resolvedPath: C:\Users\farma\Downloads\yandex-games-plugin-unity-2e0b05f3901c278e5681799595f3de9f27ebf6a3\yandex-games-plugin-unity-2e0b05f3901c278e5681799595f3de9f27ebf6a3
+  assetPath: Packages/com.k0fe.yandexgamessdk
+  name: com.k0fe.yandexgamessdk
+  displayName: Yandex Games SDK
+  author:
+    name: k0fe
+    email: 
+    url: 
+  category: 
+  type: 
+  description: Unofficial Yandex Games SDK provider for Unity.
+  status: 4
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    verified: 
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - yandex
+  - sdk
+  - webgl
+  - html
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/k0leso/yandex-games-plugin-unity
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
 - packageId: com.unity.collab-proxy@1.17.2
   testable: 0
   isDirectDependency: 1
