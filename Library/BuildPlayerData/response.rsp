@@ -1,4 +1,5 @@
 -a="D:\UnityHub\UnityProjects\Dragon Picker\Library\PlayerScriptAssemblies\Assembly-CSharp.dll"
+-a="D:\UnityHub\UnityProjects\Dragon Picker\Library\PlayerScriptAssemblies\YandexGamesSDK.dll"
 -a="D:\UnityHub\UnityProjects\Dragon Picker\Library\PlayerScriptAssemblies\Unity.Services.Core.Telemetry.dll"
 -a="D:\UnityHub\UnityProjects\Dragon Picker\Library\PlayerScriptAssemblies\UnityEngine.TestRunner.dll"
 -a="D:\UnityHub\UnityProjects\Dragon Picker\Library\PlayerScriptAssemblies\Unity.Timeline.dll"

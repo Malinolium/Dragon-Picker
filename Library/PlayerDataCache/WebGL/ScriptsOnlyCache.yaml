@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - dragonEgg
     - dragonPicker
     - enemy_dragon
+    - log_bridge
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -59,11 +60,13 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2796}
+      Script: {instanceID: 2462}
     - Class: 114
-      Script: {instanceID: 3564}
+      Script: {instanceID: 2822}
     - Class: 114
-      Script: {instanceID: 4262}
+      Script: {instanceID: 3602}
+    - Class: 114
+      Script: {instanceID: 4302}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -135,6 +138,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: aa57ba0ab9e2f8283416572cefef9972
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Examples
+    className: StoragePanel
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -171,10 +180,22 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
+      Hash: b5942295a8f1a65e3ecbb16e08b60efa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Examples
+    className: LeaderboardPanel
+  - hash:
+      serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: log_bridge
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -211,6 +232,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionEnterMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InstantGamesBridge.Modules.Social
+    className: SocialModule
+  - hash:
+      serializedVersion: 2
+      Hash: 833be7c72023dddd7b81e1e73a4c759d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Examples
+    className: SocialPanel
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -280,6 +313,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InstantGamesBridge.Modules.Player
+    className: PlayerModule
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnDropdownValueChangedMessageListener
@@ -333,6 +372,12 @@ ScriptsOnlyBuild:
     className: VariablesAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InstantGamesBridge
+    className: Bridge
+  - hash:
+      serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
     assemblyName: Unity.VisualScripting.Flow.dll
     namespaceName: Unity.VisualScripting
@@ -355,6 +400,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InstantGamesBridge.Modules.Leaderboard
+    className: LeaderboardModule
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -495,6 +546,12 @@ ScriptsOnlyBuild:
     className: UnityOnCancelMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 6777d07592185085807b19ae75a9865c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Examples
+    className: AdvertisementPanel
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -549,6 +606,12 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: 82b9f8e8b7899543bdfc85737f9aa91e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Examples
+    className: PlayerPanel
+  - hash:
+      serializedVersion: 2
       Hash: bcaee4c2a83047257b5f47d6ed264b75
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -571,6 +634,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: HorizontalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 9ada0dee05608215bdb0fda7f2b85140
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Examples
+    className: Example
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -615,6 +684,12 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
+      Hash: 9fdee7bd28e743bbc5345903f6cdd99f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Examples
+    className: DevicePanel
+  - hash:
+      serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
     assemblyName: Unity.VisualScripting.State.dll
     namespaceName: Unity.VisualScripting
@@ -651,6 +726,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseUpAsButtonMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InstantGamesBridge.Modules.Storage
+    className: StorageModule
+  - hash:
+      serializedVersion: 2
       Hash: e09e8bebc0fcd32bb8af1287a6b44816
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -661,6 +742,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Scrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InstantGamesBridge.Modules.Game
+    className: GameModule
+  - hash:
+      serializedVersion: 2
+      Hash: 12b4f68bbe23d31ef4c2824f55bf095a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Examples
+    className: PlatformPanel
   - hash:
       serializedVersion: 2
       Hash: 5dea360fb0b147724ac344e6f399c2f3
@@ -685,6 +778,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: InstantGamesBridge.Modules.Advertisement
+    className: AdvertisementModule
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -832,6 +931,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: YandexGamesSDK.dll
+    namespaceName: 
+    className: YandexSDK
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseUpMessageListener
@@ -874,4 +979,4 @@ ScriptsOnlyBuild:
   platform: 20
   scenePathNames:
   - Assets/Scenes/_0Scene.unity
-  playerPath: "C:/Users/farma/OneDrive/\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B/builds_unity"
+  playerPath: "C:/Users/farma/OneDrive/\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B/builds_unity/dp5"

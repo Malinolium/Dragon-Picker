@@ -36,10 +36,59 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Advertisement\SetMinimumDelayBetweenInterstitialYandexOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Social\CreatePostPlatformDependedOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Advertisement\RewardedState.cs" />
+     <Compile Include="Assets\Examples\Scripts\StoragePanel.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Social\JoinCommunityPlatformDependedOptions.cs" />
+     <Compile Include="Assets\Examples\Scripts\LeaderboardPanel.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Player\AuthorizePlatformDependedOptions.cs" />
+     <Compile Include="Assets\log_bridge.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Leaderboard\GetEntriesYandexOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Social\SocialModule.cs" />
+     <Compile Include="Assets\Examples\Scripts\SocialPanel.cs" />
      <Compile Include="Assets\Scenes\enemy_dragon.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Leaderboard\ShowNativePopupVkOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Common\JsonHelper.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Player\PlayerModule.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Game\VisibilityState.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Bridge.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Leaderboard\LeaderboardModule.cs" />
      <Compile Include="Assets\Scenes\dragonEgg.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Leaderboard\GetScorePlatformDependedOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Leaderboard\GetEntriesPlatformDependedOptions.cs" />
      <Compile Include="Assets\Scenes\dragonPicker.cs" />
-     <Compile Include="Assets\Scenes\YaSDK.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Advertisement\SetMinimumDelayBetweenInterstitialPlatformDependedOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Device\DeviceType.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Advertisement\ShowInterstitialPlatformDependedOptions.cs" />
+     <Compile Include="Assets\Examples\Scripts\AdvertisementPanel.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Leaderboard\ShowNativePopupPlatformDependedOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Leaderboard\GetScoreYandexOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Advertisement\InterstitialState.cs" />
+     <Compile Include="Assets\Examples\Scripts\PlayerPanel.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Advertisement\ShowInterstitialYandexOptions.cs" />
+     <Compile Include="Assets\Examples\Scripts\Example.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Social\ShareVkOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Platform\PlatformModule.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Player\AuthorizeYandexOptions.cs" />
+     <Compile Include="Assets\Examples\Scripts\DevicePanel.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Common\Singleton.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Device\DeviceModule.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Advertisement\SetMinimumDelayBetweenInterstitialVkOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Advertisement\ShowInterstitialVkOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Storage\StorageModule.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Game\GameModule.cs" />
+     <Compile Include="Assets\Examples\Scripts\PlatformPanel.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Leaderboard\LeaderboardEntry.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Social\SharePlatformDependedOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Leaderboard\SetScoreYandexOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Advertisement\AdvertisementModule.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\PlatformDependedOptionsBase.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\OptionsTargetPlatform.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Storage\StorageType.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Social\JoinCommunityVkOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Leaderboard\SetScorePlatformDependedOptions.cs" />
+     <Compile Include="Assets\InstantGamesBridge\Scripts\Modules\Social\CreatePostVkOptions.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\UnityHub\UnityEditor\2021.3.10f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -652,6 +701,9 @@
     <Reference Include="Unity.VisualScripting.Flow.Editor">
         <HintPath>D:\UnityHub\UnityProjects\Dragon Picker\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="YandexGamesSDK">
+        <HintPath>D:\UnityHub\UnityProjects\Dragon Picker\Library\ScriptAssemblies\YandexGamesSDK.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:\UnityHub\UnityProjects\Dragon Picker\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -726,9 +778,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
         <HintPath>D:\UnityHub\UnityProjects\Dragon Picker\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="YandexGamesSDK">
-        <HintPath>D:\UnityHub\UnityProjects\Dragon Picker\Library\ScriptAssemblies\YandexGamesSDK.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
