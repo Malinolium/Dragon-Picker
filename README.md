@@ -214,6 +214,7 @@ public class dragonPicker : MonoBehaviour
 Далее я поместила кусок кода в Index.html и добавила сообщения-логи.
 
 
+
 ```
 <script src="https://cdn.jsdelivr.net/gh/instant-games-bridge/instant-games-bridge@1.5.2/dist/instant-games-bridge.js"></script>
 <script>
@@ -235,6 +236,40 @@ public class dragonPicker : MonoBehaviour
 
 ```
 ```
+
+
+
+
+Вторая часть работы (или ее альтернативный вариант) состоял в том, что релиз-плагин с гитхаба скачиваешь и открываешь в юнити. Там как раз и находится скрипт Bridge, из которого должны подтягиваться функции. При написании скрипта пользовалась документацией, но после билда в браузере сыпется куча ошибок.
+
+```
+using InstantGamesBridge;
+using UnityEngine;
+
+public class log_bridge : MonoBehaviour
+{
+private void Start()
+{
+    Debug.Log("Hello world");
+    Bridge.Initialize(success =>
+    {
+        if (success)
+        {
+           Debug.Log("Initializate");
+        }
+        else
+        {
+            Debug.Log("Error");
+        }
+    });
+}
+}
+```
+
+![image](https://user-images.githubusercontent.com/57430501/194392514-3f09045f-d062-4d8b-823a-08a959e055be.png)
+
+
+
 
 
 ## Задание 3
