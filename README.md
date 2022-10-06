@@ -35,55 +35,215 @@
 - ✨Magic ✨
 
 ## Цель работы
-ознакомиться с основными функциями Unity и взаимодействием с объектами внутри редактора.
+Cоздание интерактивного приложения и изучение принципов интеграции в него игровых сервисов.
 
 ## Задание 1
-### Пошагово выполнить каждый пункт раздела "ход работы" с описанием и примерами реализации задач
+### Интеграция сервиса для получения данных профиля пользователя.
 Ход работы:
 Задание 1
-В разделе «ход работы» пошагово выполнить каждый пункт с описанием и
-примера реализации задач по теме видео «Практическая работа 1-4».
-Ход работы (задание 1).
-1) Создать новый проект из шаблона 3D – Core;
-2) Проверить, что настроена интеграция редактора Unity и Visual Studio Code
-(пункты 8-10 введения);
-3) Создать объект Plane;
-4) Создать объект Cube;
-5) Создать объект Sphere;
-6) Установить компонент Sphere Collider для объекта Sphere;
-7) Настроить Sphere Collider в роли триггера;
-8) Объект куб перекрасить в красный цвет;
-9) Добавить кубу симуляцию физики, при это куб не должен проваливаться
-под Plane;
-10) Написать скрипт, который будет выводить в консоль сообщение о том,
-что объект Sphere столкнулся с объектом Cube;
-11) При столкновении Cube должен менять свой цвет на зелёный, а при
-завершении столкновения обратно на красный.
+По теме видео практических работ 1-5 повторить реализацию игры на Unity.
+Привести описание выполненных действий.
 
 
-![2022-09-28_17-40-48_Trim (1) (1)](https://user-images.githubusercontent.com/57430501/192826989-e7f74abd-d229-4aa8-9982-3dbe70c72c70.gif)
+1. Создаю новый проект в unity hub.
+2. Переименовала сцену
+3. В менеджере пакетов подгрузила два ассета: "Dragon for boss monster" и "Fire & Spell";
+4. Импортировала оба пакета
+5. Разместила префаб синего дракона
+6. Переместила в окно иерархии и переименовала
+7. Разместила на необходимых координатах
+8. Подключила animated controller
+9. Подключила анимацию полета дракона в аниматор
+10. Подключила анимацию к префабу дракона
+11. Создала сферу - драконье яйцо
+12. Накинула материал для драконьего яйца
+13. Добавила rigid body в префаб яйца
+14. Создала новый тег для драконьего яйца
+15. Создала новую сферу для энергетического щита и расставила необходимые координаты
+16. Накинула новый материал для щита
+17. Изменила рендеринг мод
+18. Подключила rigid body, отключила gravity, включила kinematic
+19. Настроила камеру как в видео
+20. ПОставила соотношение сторон в отображении игры 16:9
+21. Создала скрипт для дракона, чтобы он перемещался в разные стороны и сбрасывал яйца
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class enemy_dragon : MonoBehaviour
+{
+    public GameObject dragonEggPrefab;
+    public float speed = 1;
+    public float timeBetweenEggDrops = 1f;
+    public float leftRightDistanse = 10f;
+    public float chanceDirection = 0.1f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Invoke("DropEgg", 2f);
+    }
+
+    void DropEgg(){
+        Vector3 myVector = new Vector3(0.0f, 5.0f, 0.0f);
+        GameObject egg = Instantiate<GameObject>(dragonEggPrefab);
+        egg.transform.position = transform.position + myVector;
+        Invoke("DropEgg", timeBetweenEggDrops);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Vector3 pos = transform.position;
+        pos.x += speed * Time.deltaTime;
+        transform.position = pos;
+
+        if (pos.x < -leftRightDistanse){
+            speed = Mathf.Abs(speed);
+        }
+        else if (pos.x > leftRightDistanse){
+            speed = -Mathf.Abs(speed);
+        }
+    }
+    private void FixedUpdate(){
+        if (Random.value < chanceDirection){
+            speed *= -1;
+        }
+    }
+}
+
+```
+22. Подключила скрипт к дракону
+23. Поместила префаб яйца в скрипт перемещения дракона
+24. Расставила необходимые значения для сбрасывания яйца и скорость пермещения дракона
+25. Описала работу яйца
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class dragonEgg : MonoBehaviour
+{
+    public static float bottomY = -30f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+    private void OnTriggerEnter(Collider other) {
+        ParticleSystem ps = GetComponent<ParticleSystem>();
+        var em = ps.emission;
+        em.enabled = true;
+
+        Renderer rend;
+        rend = GetComponent<Renderer>();
+        rend.enabled = false;
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (transform.position.y < bottomY){
+            Destroy(this.gameObject);
+        }
+    }
+}
+
+```
+28. Добавила эффекты взрыва с помощью ассета Fire & Spell
+29. Накинула текстуру взрыва, настроила рендеринг
+30. Настроила particle system
+31. ![image](https://user-images.githubusercontent.com/57430501/194327359-528bbb62-b699-421f-8688-79e13210a2f6.png)
+32. Добавила работу энергетического щита - сгенерированные 3 слоя
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class dragonPicker : MonoBehaviour
+{
+    public GameObject energyShieldPrefab;
+
+    public int numEnergyShield = 3;
+
+    public float energyShieldBottomY = -6f;
+
+    public float energyShieldRadius = 1.5f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        for (int i = 1; i <= numEnergyShield; i++){
+            GameObject tShieldGo = Instantiate<GameObject>(energyShieldPrefab);
+            tShieldGo.transform.position = new Vector3(0, energyShieldBottomY, 0);
+            tShieldGo.transform.localScale = new Vector3(1*i, 1*i, 1*i);
+
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+
+```
+![2022-10-04-17-35-17_Trim-_2_](https://user-images.githubusercontent.com/57430501/194357940-7fcb1e9b-6bd6-4dd3-baea-432b701af584.gif)
+
 
 
 
 ## Задание 2
-### Продемонстрируйте на сцене в Unity следующее:
+В проект, выполненный в предыдущем задании, добавить систему проверки того, что SDK подключен (доступен в режиме онлайн и отвечает на запросы);
 
-- Что произойдёт с координатами объекта, если он перестанет быть
-дочерним?
-- Создайте три различных примера работы компонента RigidBody?
+После того, как я сбилдила проект, создался файл index.html
+Для подключения SDK я использовала Instant Game Bridge. Ссылка на гит: https://github.com/instant-games-bridge/instant-games-bridge
+Далее я поместила кусок кода в Index.html и добавила сообщения-логи.
+```
+<script src="https://cdn.jsdelivr.net/gh/instant-games-bridge/instant-games-bridge@1.5.2/dist/instant-games-bridge.js"></script>
+<script>
+    bridge.initialize()
+        .then(() => {
+            // Initialized. You can use other methods.
+        })
+        .catch(error => {
+            // Error
+        })
+</script>
+```
+
+Открываем страницу. Открываем консоль. Бинго
+![image](https://user-images.githubusercontent.com/57430501/194382200-ce9a7498-75d0-44fa-9554-18d88540ff3b.png)
 
 
 ```
 ```
-- Если есть связка родительского объекта с дочерним, то при перемещении родительского объекта меняются его координаты, координаты дочернего объекта не меняются, хотя перемещаются оба объекта. Если удалить связку, координаты дочернего объекта складываются с координатами родительского.
-![2022-09-28_19-07-17_Trim (1) (1)](https://user-images.githubusercontent.com/57430501/192833620-98fdc1aa-fb75-473a-b786-4b061a3db375.gif)
 
-- Здесь показано три объекта с тремя разными примерами работы: шар с включенным параметром "Use Gravity", куб с отключенными параметрами и цилиндр с включенным параметром "Is kinematic"
-![2022-09-28_19-31-41_Trim](https://user-images.githubusercontent.com/57430501/192837177-682b329b-8a67-4a64-a6db-b1eb7535e324.gif)
 
 ## Задание 3
-### Реализуйте на сцене генерацию n кубиков. Число n вводится пользователем после старта сцены.
-![image](https://user-images.githubusercontent.com/57430501/192858781-243d3e32-f2b6-4f0c-b6c2-c31f73ad8b8d.png)
+1. Произвести сравнительный анализ игровых сервисов Яндекс Игры
+и VK Game;
+
+Яндекс.Игры — это каталог браузерных игр, которые можно запускать как на мобильных телефонах, так и на компьютерах. Яндекс встроит каталог игр в главную страницу, а также в Яндекс.Браузер и приложение Яндекс.
+Игры оптимизированы для декстопной и мобильной веб-версии.
+Присутствует официальный SDK.
+
+Игровая платформа VK — это 10 миллионов активных пользователей, которые ежемесячно проводят время в играх ВКонтакте. Встраиваемую игру можно запустить мгновенно — ни ввода пароля, ни скачивания на телефон, ни ожидания установки.
+Игры доступны пользователям:
+в десктопной (vk.com) и мобильной версии (m.vk.com),
+в приложении ВКонтакте для iOS (iPadOS) и Android.
+Присутвует официальный VK Bridge и VK SDK для разных языков: JS, Java, PHP, IOS и Android
+![image](https://user-images.githubusercontent.com/57430501/194359352-248ec2ba-8685-41a1-985c-97b4566c458c.png)
+
+
+
+- Яндекс.Игры на мой взгляд масштабнее, есть поддержка разных языков, тщательная модерация игр. Присутствует свой SDK. Для подключения необходим плагин внешний. Вк шустрее, но работает более локально. Поживее коммуникация - но это обычные люди в группках, комьюнити поживее. Искать нормальный рабочий SDK пришлось на просторах DTF.
+- Описать их методы интеграции с Unity;
+- Весь отчет выше является рефератом. Т.к. по-человечески нет возможности пощупать ни vk game, ни Яндекс.Игры; 
 
 
 
@@ -92,8 +252,7 @@
 
 ## Выводы
 - Абзац умных слов о том, что было сделано и что было узнано.
-С нуля. Первый раз в жизни щупаю юнити, сквозь кровь, пот и боль задания готовы.
-Ненавижу юнити
+Я амбассадор хейта юнити.
 
 | Plugin | README |
 | ------ | ------ |
